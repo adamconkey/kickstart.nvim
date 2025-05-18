@@ -1,20 +1,24 @@
 return {
-  {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    config = function()
-      local Terminal = require('toggleterm.terminal').Terminal
-      local lazygit = Terminal:new {
-        cmd = 'lazygit',
-        direction = 'float',
-        hidden = true,
-      }
-
-      function _lazygit_toggle()
-        lazygit:toggle()
-      end
-
-      vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
-    end,
-  },
+  -- TODO not sure if I want to use this one yet, was going to use it
+  -- for a lazygit terminal but am using lazygit.nvim instead. May
+  -- still want this for other terminal toggles though.
+  --
+  -- {
+  --   'akinsho/toggleterm.nvim',
+  --   version = '*',
+  --   config = function()
+  --     local Terminal = require('toggleterm.terminal').Terminal
+  --     local lazygit = Terminal:new {
+  --       cmd = 'lazygit',
+  --       direction = 'float',
+  --       hidden = true,
+  --     }
+  --
+  --     function _lazygit_toggle()
+  --       lazygit:toggle()
+  --     end
+  --
+  --     -- vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
+  --   end,
+  -- },
 }
